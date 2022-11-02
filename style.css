@@ -1,0 +1,149 @@
+* {
+  font-family: 'Nanum Myeongjo', serif;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: 'Jua', sans-serif;
+}
+
+body {
+  padding: 40px 100px;
+  margin: 0px;
+  min-width: 1400px;
+  background-color: white;
+}
+
+.bg {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin: 0px auto;
+  position: relative;
+}
+
+.bg video {
+  position: absolute;
+  top: -150px;
+  object-fit: cover;
+}
+
+video {
+  width: 100%;
+}
+
+.text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text p {
+  text-align: center;
+  font-size: 48px;
+  color: #ffffff;
+}
+
+.main_box1 {
+  width: 100%;
+  height: 410px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.videoText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.main_box2 {
+  padding: 20px;
+  width: 45%;
+  height: 410px;
+  margin-top: 10px;
+  background-image: url('https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283__340.jpg');
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.main_box3 {
+  width: 70%;
+  height: 410px;
+
+  margin-top: 10px;
+  margin-left: 30px;
+
+  background-size: cover;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('https://media.istockphoto.com/photos/creative-website-design-team-and-application-development-plan-on-in-picture-id1337028688?b=1&k=20&m=1337028688&s=170667a&w=0&h=Bpgh-0DibA-9UVB65A7Xudqya_VscX8TlSILc8Yiivw=');
+
+  background-color: grey;
+
+  color: black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.cardcontainer {
+  margin-top: 50px;
+}
+
+.main_box4 {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.main_box5 {
+  width: 100%;
+  height: auto;
+  margin: 20px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.main_box5 img:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.filter {
+  filter: drop-shadow(5px 5px 5px #000);
+  position: relative;
+  font-family: 'Jua', sans-serif;
+}
+
+.img-thumbnail {
+  background: none;
+  border: none;
+  border-radius: 10px;
+}

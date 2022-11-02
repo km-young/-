@@ -1,0 +1,100 @@
+* {
+  font-family: 'Jua', sans-serif;
+}
+
+.main-left a {
+  text-decoration: none;
+  color: black;
+}
+html body {
+  padding: 50px;
+  background-image:linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0)), url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2F9ck5Z%2FbtrP7MRPGLP%2FV8TEQWcZ4BrmGlNxkLfJ01%2Fimg.webp");
+}
+
+.text {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 28px;
+  text-align: center;
+  border-bottom: 2px solid black;
+  width: 300px;
+  margin: 5px auto;
+}
+
+.text1 {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 28px;
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+  text-shadow: 3px 3px 4px rgb(255, 255, 255);
+
+}
+
+
+.main-img,
+img {
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+img {
+  filter: drop-shadow(5px 5px 5px rgb(43, 43, 43));
+}
+
+.containerflex {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.hed {
+  font-size: 20px;
+  
+}
+
+.hed1 {
+  text-shadow: 3px 3px 4px rgb(255, 255, 255);
+}
+
+.main-left {
+  width: 500px;
+  padding-left: 150px;
+}
+
+.main-right {
+  width: 500px;
+  padding-left: 20px;
+  border-left: 2px solid grey;
+}
+
+.comment {
+  width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  text-align: right;
+}
+
+.btn {
+  margin: 10px;
+}
+
+.card {
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.icon {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.icon:hover {
+  cursor: pointer;
+  width: 55px;
+}
+
+.click {
+  font-size: 30px;
+  text-shadow: 3px 3px 4px rgb(255, 255, 255);
+}
