@@ -102,3 +102,6 @@ img {
   text-shadow: 3px 3px 4px rgb(255, 255, 255, 0.654);
 }
 
+input {
+  background-image:linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0)), url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2F9ck5Z%2FbtrP7MRPGLP%2FV8TEQWcZ4BrmGlNxkLfJ01%2Fimg.webp");
+}
