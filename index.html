@@ -1,102 +1,256 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous" />
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./style.css" />
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css"/>
 
     <title>스파르타 고진감래</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
-      rel="stylesheet" />
-  </head>
-  <body>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Jua&family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
-    <!-- 상단 헤더영상 -->
-    <header class="bg">
-      <video muted autoplay loop>
-        <source src="https://ifh.cc/v/cYAXHV.mp4" type="video/mp4" />
-      </video>
-      <div class="text">
-        <p class="videoText">Sparta 苦盡甘來</p>
-      </div>
-    </header>
+    <style>
+        * {
+            font-family: 'Jua', sans-serif;
+            border-radius: 5px;
+            font-weight: 400;
+        }
 
-    <!-- 메인-팀소개, 프로젝트 소개 -->
-    <main class="main_box1">
+        h2 {
+            font-family: 'Jua', sans-serif;
+        }
 
-      <div class="main_box2">
+        body {
+            padding: 40px 100px;
+            margin: 0px;
+            min-width: 1400px;
+            background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIVFRUVFRUVFRUVFRUVFRUVFRUXFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFQ8PFSsdFRkrKysrLS0tLS0tKystKy0tLS0rLSsrLS0tKy0rLS0tLS0tLS0tLS0tLS0tLS0tKy0rLf/AABEIALUBFgMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAQIDB//EACcQAQEAAgECBQQDAQAAAAAAAAABAhEhMWEDEkFRkXGhscGB4fAy/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAEDAv/EABcRAQEBAQAAAAAAAAAAAAAAAAABESH/2gAMAwEAAhEDEQA/APZklLExYul2lVECp5WrfUgKmiKolVCIKmg2CpPqmc3NdDHKca+PYGkhMknW/P6/QNUlGMrqcKLlnP5TCrZwaQWwKVQUAATQKaQA8sWJFAkABnXs0SaEE8oqAFDahpF2IIsgtARamgKmOOu60gCZtM3sBMfdrRKAzpdKAk6ouzKgzc+ndpnXRsgJRKopS0s2gCiiQsUBIUkVAhtFUAY8S9O90g2G0UIBQCkTJBoIkvKhFkSkoKhBBQFEiypFQLCETahUsStRA0sVFEFTYASqAJYoFEypigsKM54b12BSKzlloGkTDLawCCoCoGlC0JBANLBQAA0FAIEKBtm1VQSKUgFZxJOWgAgoJFQCRUS1BpMhVEs6FigJtWb3aQGMpd7aUElVJFUEVAAqggXGUgBAQc5hq/8AV1fTjU+23QWGAKzVBUndQAABmW+38rUBYaTaiypjSdPkiAbYubUnO/oaKWFUE0qEyBUtVjHHnkEt7ejokhCAQ0RRQAELAAipQIqSgGiAAmOXyqoG0NGINSLpIiis5VvFmc0F0jQCJpqRizf0AnLehMugM6nWz0VqzhAKzZsyt01ATSaVz8OX1+EHSljMqzkFkTSs4A0kWpiBUq5TZABYihSibQZybhoAQ9WgCiAmXYxq7T1BuVdsTS7UTHNZEWAsyNsbXA0atZzy4VLiUMM9/DVZkUFtQKAu0lAWsm1Qc8/zx/vu1hjJwz419PXhvG3QLCES1RVQA0aNEBNCwBIFZQaAUVAQC1WaCZ+7UKtBKqWKCRUsUEymyqlUJl7LohsAE83GwUTCKCZUvMS307/21UEhL+UxmmgKmxLKCpk05595wDoEKCWqChtCgBaM3HnaDSVaWglhpZUyBb0S47igGNUSAqUSwCXZtZFBNKliqJkYxSgl5THw5Of3+moqDMVFgJpaxk2DLSSFBTYSKMy+i547mlggmzS2JkAsTFVE0KAztTYgWAKCZThd+6ILIVYmQEqsZ9Ouu6+YGkVAVKaTxOnx8b5AxVagLsBQEpiAtBAqZVUoLC1NgFm1gAaYxl9/X7NZUgLEaYtBoQtBQgolNGVAFZkN9gUS1YCVS1Mr7IKzlPoY8tWARTRAKkVAVNLBRJCKlQUglqihCoAkqgFBQBLf2gpVRQICAmSmgSUSXkUarnnx9vyolF2tgKJ5f9/THieLrXHUEvB1SxBRVBAICiZUiCDRAUCgAAAzllr4v2BKLjFAEtUASw8vRAG0AEt5WIApQBJAFH//2Q==");
+            background-size: cover;
+        }
+
+        .bg {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            margin: 0px auto;
+            position: relative;
+        }
+
+        .bg video {
+            position: absolute;
+            top: -200px;
+            object-fit: cover;
+        }
+
+        video {
+            width: 100%;
+        }
+
+        .text {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .text p {
+            text-align: center;
+            font-size: 48px;
+            color: #ffffff;
+        }
+
+        .main_box1 {
+            width: 100%;
+            height: 410px;
+            margin: auto;
+
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .videoText {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-family: 'Noto Sans KR', sans-serif;
+            text-shadow: 5px 5px 5px rgb(192, 192, 192);
+        }
+
+        .main_box2 {
+            padding: 20px;
+            width: 45%;
+            height: 410px;
+            margin-top: 10px;
+            background-image: none;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .main_box3 {
+            width: 70%;
+            height: 410px;
+
+            margin-top: 10px;
+            margin-left: 30px;
+
+            background-size: cover;
+            background-image: linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0)
+            ),
+            url('https://cdn.pixabay.com/photo/2019/10/03/12/12/programmer-4523101__340.jpg');
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .cardcontainer {
+            margin-top: 50px;
+        }
+
+        .main_box4 {
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+            background-size: cover;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-evenly;
+        }
+
+        .main_box5 {
+            width: 100%;
+            height: auto;
+            margin: 20px;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .main_box5 img:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        .filter {
+            filter: drop-shadow(5px 5px 5px #000);
+            position: relative;
+            font-family: 'Jua', sans-serif;
+        }
+
+        .filter2 {
+            text-shadow: 5px 5px 5px rgb(192, 192, 192);
+            position: relative;
+            font-family: 'Jua', sans-serif;
+        }
+
+        .img-thumbnail {
+            background: none;
+            border: none;
+            border-radius: 10px;
+        }
+
+    </style>
+    <script></script>
+</head>
+<body>
+<div class="bg">
+    <video muted autoplay loop>
+        <source src="https://ifh.cc/v/cYAXHV.mp4" type="video/mp4"/>
+    </video>
+    <div class="text">
+        <p class="videoText">SPARTA 苦盡甘來</p>
+    </div>
+</div>
+
+<div class="main_box1">
+    <div class="main_box2">
         <div>
-          <h1>팀 소개</h1>
-          <p>
-            저희는 스파르타 코딩클럽 내일배움캠프 4기에 참가하여 개발을 배우고
-            있는 인원들입니다.
-          </p>
-          <p>
-            총 5명의 인원이 함께 공부하고 있으며 좋은 개발자가 되기까지 절대
-            중도에 포기하지 않고 열심히 배우겠습니다!
-          </p>
+            <h1 class="filter2">팀 소개</h1>
+            <p>
+                저희는 스파르타 코딩클럽 내일배움캠프 4기에 참가하여 웹 개발을 배우고
+                있는 인원들입니다. 팀 이름으로 고생 끝에 낙이 온다는 사자성어인 '고진감래(苦盡甘來)'를 가져왔습니다.
+                이 뜻 그대로 고생해서 노력한 만큼 꼭 그에 맞는 보람을 느끼고 싶네요.
+                저희는 총 4명의 인원이 함께 공부하고 있으며 모르는 것은 서로에게 물어보고 배우고 있습니다.
+                앞으로 좋은 개발자가 될 때까지 중도에 포기하지 않고 열심히 배우겠습니다!
+            </p>
+            <p>
+            </p>
         </div>
         <div>
-          <h1>프로젝트 소개</h1>
-          <p>
-            저희 프로젝트의 목적은 팀 '고진감래'를 소개하는 웹 페이지를 만드는
-            것입니다. 그리고 웹 페이지를 만들면서 블라블라
-          </p>
+            <h1 class="filter2">프로젝트 소개</h1>
+            <p>
+                저희 프로젝트의 목적은 팀 '고진감래(苦盡甘來)'를 소개하는 웹 페이지를 만드는 것입니다.
+                HTML과 CSS를 활용하여 페이지를 디자인했고 자바스크립트로 지금까지 배웠던 소소한 기능들을 만들어 봤습니다.
+                또 몽고 DB를 이용하여 팀원 프로필 상세 페이지에 방명록을 기록할 수 있도록 만들어 봤습니다.
+                저희 모두 웹 페이지를 만들어 본 경험이 없기 때문에 많이 미흡할 수 있지만, 할 수 있는 최선을 다해서 만들어 봤습니다.
+                모쪼록 재밌게 보고 가셨으면 좋겠네요. 감사합니다! :)
+            </p>
         </div>
-      </div>
-      <div class="main_box3"></div> <!--메인-오른쪽 이미지-->
-    </main>
+    </div>
+    <div class="main_box3"></div>
+</div>
 
-    <!-- 팀원 카드 -->
-    <div class="main_box4">
-      <div class="main_box5">
+<div class="main_box4"></div>
+<div class="main_box4">
+    <div class="main_box5">
         <h2>팀장. 김미영</h2>
-          <img
-            src="https://ifh.cc/g/AAccxX.jpg"
-            class="img-thumbnail img1 filter"
-            alt="..." />
-      </div>
-      
-      <div class="main_box5">
-        <h2>팀원. 성영주</h2>
         <img
-          src="https://ifh.cc/g/3xA93s.jpg"
-          class="img-thumbnail img2 filter"
-          alt="..." />
-      </div>
-
-      <div class="main_box5">
-        <h2>팀원. 김도원</h2>
-        <img
-          src="https://ifh.cc/g/2akX7z.jpg"
-          class="img-thumbnail img3 filter"
-          alt="..." />
-      </div>
-
-      <div class="main_box5">
-        <h2>팀원. 정진수</h2>
-        <img
-          src="https://ifh.cc/g/jDlHgz.jpg"
-          class="img-thumbnail img4 filter"
-          alt="..." />
-      </div>
-
+                src="https://ifh.cc/g/AAccxX.jpg"
+                class="img-thumbnail img1 filter"
+                alt="..."/>
     </div>
 
-    <script src="./index.js"></script>
-  </body>
+    <div class="main_box5">
+        <h2>팀원. 성영주</h2>
+        <img
+                src="https://ifh.cc/g/3xA93s.jpg"
+                class="img-thumbnail img2 filter"
+                alt="..."/>
+    </div>
+    <div class="main_box5">
+        <h2>팀원. 김도원</h2>
+        <img
+                src="https://ifh.cc/g/2akX7z.jpg"
+                class="img-thumbnail img3 filter"
+                alt="..."/>
+    </div>
+    <div class="main_box5">
+        <h2>팀원. 정진수</h2>
+        <img
+                src="https://ifh.cc/g/jDlHgz.jpg"
+                class="img-thumbnail img4 filter"
+                alt="..."/>
+    </div>
+</div>
+
+<script src="./script.js"></script>
+</body>
 </html>
